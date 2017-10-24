@@ -178,12 +178,20 @@
       <updated>1508809585147</updated>
       <workItem from="1508809590009" duration="3039000" />
       <workItem from="1508817295617" duration="1782000" />
-      <workItem from="1508823562896" duration="748000" />
+      <workItem from="1508823562896" duration="792000" />
     </task>
+    <task id="LOCAL-00001" summary="测试phpStorm git">
+      <created>1508824639240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508824639241</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5569000" />
+    <option name="totallyTimeSpent" value="5613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="786" extended-state="6" />
@@ -212,6 +220,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="测试phpStorm git" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试phpStorm git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
