@@ -21,12 +21,13 @@ class CorWorker extends Worker
     public $eventHandler;
     protected $_onConnect;
     protected $_onWorkerStart;
+    protected $_onWorkerStop;
     protected $_onMessage;
     protected $_onClose;
     protected $_onError;
     protected $_onBufferFull;
     protected $_onBufferDrain;
-
+    protected $cpu_unix_name;
     /**
      * 析构函数
      * @param string $socket_name
@@ -54,9 +55,9 @@ class CorWorker extends Worker
            $this->eventHandler = "Events";
         }
         //管道位置
-        $cpu_unix_name = 'unix:///tmp/cor_'.posix_getpid() . ".sock";
+        $this->cpu_unix_name = 'unix:///tmp/cor_'.posix_getpid() . ".sock";
         //创建任务线程
-        $this->taskThread = new CorThread($cpu_unix_name,$this->eventHandler);
+        $this->taskThread = new CorThread($this->cpu_unix_name,$this->eventHandler);
         $this->taskThread->start();
         //设置工作类路径
 
@@ -64,6 +65,8 @@ class CorWorker extends Worker
         //重新设置方法
         $this->_onWorkerStart = $this->onWorkerStart;
         $this->onWorkerStart = array($this, "onWorkerStart");
+        $this->_onWorkerStop = $this->onWorkerStop;
+        $this->onWorkerStop = array($this, "onWorkerStop");
 
         // 运行父方法
         parent::run();
@@ -134,6 +137,20 @@ class CorWorker extends Worker
                 call_user_func($worker->_onWorkerStart, $worker);
             }
         },array(),false);
+    }
+
+    public function onWorkerStop($worker)
+    {
+        $this->taskThread->is_exit = true;
+        /**
+         * 退出的时候删除unix文件
+         */
+        if (strpos($worker->cpu_unix_name, "unix://") === 0) {
+            $unix_file = str_replace("unix://", "", $worker->cpu_unix_name);
+            if (file_exists($unix_file)) {
+                unlink($unix_file);
+            }
+        }
     }
 
     /**
