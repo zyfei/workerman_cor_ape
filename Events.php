@@ -8,8 +8,8 @@ class Events{
         $mysql = new \Cor\Extend\MySql("127.0.0.1","www","www","pingan_machine_oil");
         //查询三次
         $mysql->async_query("select * from t_admin");
-        $mysql->async_query("select * from t_admin");
-        $mysql->async_query("select * from t_admin");
+        $mysql->async_query("select *  from t_admin");
+        $mysql->async_query("select *   from t_admin");
         //注意这里采用协程方式访问mysql里面的协程方法
         $res = yield from $mysql->async_result();
         //任务线程内也可以使用$connection的绝大多数方法(pipe方法略有不同，需要传递$connection的id);
