@@ -1027,9 +1027,6 @@ class Worker
         } else {
             self::$eventLoopClass = interface_exists('\React\EventLoop\LoopInterface')? '\Workerman\Events\React\StreamSelectLoop':'\Workerman\Events\Select';
         }
-        //zyf
-        self::$eventLoopClass = '\Workerman\Events\Select';
-        var_dump(self::$eventLoopClass);
         return self::$eventLoopClass;
     }
 
