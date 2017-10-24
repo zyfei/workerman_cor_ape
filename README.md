@@ -2,7 +2,7 @@
 
 
 ## 这是什么
-Workerman_cor_ape是在知名php框架 [Workerman](https://github.com/walkor/Workerman) 基础上，不影响任何使用方式，稳定性，性能前提下，增加的异步任务组件。
+Workerman_cor_ape是知名php框架 [Workerman](https://github.com/walkor/Workerman) 的强化版，在不影响任何使用方式，稳定性，性能前提下，增加了异步任务组件。
 ## 原理是什么
 Workerman每个工作进程只有一个线程，这个线程既负责收发网络消息，又负责处理业务，在业务阻塞比较多的情况下，比较浪费性能。   
    
@@ -15,12 +15,20 @@ Workerman_cor_ape框架将Workerman每个进程扩展为两个线程，分别是
    
 
 ## Requires
-PHP 5.3 or Higher  
+线程安全版本的 PHP7 or 更高  
 A POSIX compatible operating system (Linux, OSX, BSD)  
-POSIX PCNTL and PTHREDS extensions for PHP  
+POSIX PCNTL and **PTHREDS** extensions for PHP  
+
+## Workerman的使用方法
+
+中文主页:[http://www.workerman.net](http://www.workerman.net)
+
+中文文档: [http://doc.workerman.net](http://doc.workerman.net)
+
+Documentation:[https://github.com/walkor/workerman-manual](https://github.com/walkor/workerman-manual/blob/master/english/src/SUMMARY.md)
 
 
-## 一些例子
+## 使用异步任务功能
 
 ### workerman线程
 ```php
@@ -85,14 +93,6 @@ class Events{
 ```php start.php stop  ```  
 ```php start.php restart  ```  
 ```php start.php reload  ```  
-
-## Workerman链接
-
-中文主页:[http://www.workerman.net](http://www.workerman.net)
-
-中文文档: [http://doc.workerman.net](http://doc.workerman.net)
-
-Documentation:[https://github.com/walkor/workerman-manual](https://github.com/walkor/workerman-manual/blob/master/english/src/SUMMARY.md)
 
 # Workerman性能测试
 ```
