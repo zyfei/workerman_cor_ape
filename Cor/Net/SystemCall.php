@@ -26,14 +26,4 @@ class SystemCall {
 		} );
 	}
 
-//    /**
-//     * @param \Generator $coroutine
-//     * @return SystemCall
-//     */
-//    public static function waitForRead($socket) {
-//        return new SystemCall ( function (Task $task, Cpu $cpu) use ($socket) {
-//            $cpu->waitForRead ( $socket, $task );
-//        } );
-//    }
-	
 }

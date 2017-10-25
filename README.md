@@ -2,7 +2,7 @@
 
 
 ## 这是什么
-Workerman_cor_ape是知名php框架 [Workerman](https://github.com/walkor/Workerman) 的强化版，在不影响任何使用方式，稳定性，性能前提下，增加了异步任务组件。
+Workerman_cor_ape 是知名php框架 [Workerman](https://github.com/walkor/Workerman) 的强化版，在不影响任何使用方式，稳定性，性能前提下，增加了异步任务组件。
 ## 原理是什么
 Workerman每个工作进程只有一个线程，这个线程既负责收发网络消息，又负责处理业务，在业务阻塞比较多的情况下，比较浪费性能。   
    
@@ -30,6 +30,10 @@ Documentation:[https://github.com/walkor/workerman-manual](https://github.com/wa
 
 ## 使用异步任务功能
 
+### 核心方法
+```php
+$worker->ajax("任务名字", 传递的数据, 回调的方法,超时时间);
+```
 ### workerman线程
 ```php
 use Cor\CorWorker;
@@ -42,17 +46,15 @@ $worker->count = 1;
 $worker->eventHandler = "Events";
 
 //以前怎么使用workerman，现在还可以怎么使用，毫无区别
-$worker->onMessage = function ($connection,$data){
+$worker->onMessage = function ($connection, $data) use ($worker) {
     //你也可以选择这样的方式，也就是workerman的方式,我们先注释掉，使用任务线程的send方法返回数据
     //$connection->send("hello workerman_cor_ape");
-    //这段代码会异步任务线程Evnets类里面的testMysql方法
-    CorWorker::add_job("testMysql",$connection,$data);
+    
+    //这段代码会异步任务线程Evnets类里面的helloworld方法
+    $worker->ajax("testMysql", $data, function ($body) use ($connection){
+        $connection->send(json_encode($body));
+    });
 
-};
-
-//任务线程可以将结果主动通知给workerman线程
-$worker->jobReturn = function ($connection,$data){
-    var_dump($data);
 };
 
 CorWorker::runAll();
@@ -73,12 +75,8 @@ class Events{
         $mysql->async_query("select * from t_admin");
         //注意这里采用协程方式访问mysql里面的协程方法
         $res = yield from $mysql->async_result();
-        //任务线程内也可以使用$connection的绝大多数方法(pipe方法略有不同，需要传递$connection的id);
-        $connection->send(json_encode($res));
-        //当访问connection没有内置的方法的时候，会触发workerman线程的$worker->方法
-        $connection->jobReturn("hello worker_cor_ape!");
         //方法内最少包含一个yield字段
-        yield;
+        return $res;
     }
 
 }

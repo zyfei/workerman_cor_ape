@@ -130,9 +130,11 @@ class Select
     {
         $e = null;
         while ($this->is_loop) {
+            //如果没有任务，自身也会一秒循环一次
             $timeout = 0;
             if ($this->cpu->taskQueueIsEmpty()) {
-                $timeout = null;
+                $this->_check_workerman_live();
+                $timeout = 2;
             }
             $read = $this->_readFds;
             $write = $this->_writeFds;
@@ -142,6 +144,7 @@ class Select
                 yield;
                 continue;
             }
+
             if ($read) {
                 foreach ($read as $fd) {
                     $fd_key = (int)$fd;
@@ -179,6 +182,17 @@ class Select
     public function destroy()
     {
         $this->is_loop = false;
+    }
+
+    public function _check_workerman_live(){
+        $data = json_encode(array(1,""));
+        $body_len = strlen($data);
+        $bin_head = pack('S*', $body_len);
+        $len = @fwrite($this->cpu->_mainSocket, $bin_head . $data);
+        if ($len !== strlen($bin_head . $data)) {
+            $this->cpu->thread->is_exit = false;
+        }
+
     }
 
 }

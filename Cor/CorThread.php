@@ -24,6 +24,7 @@ class CorThread extends \Thread
 
     public function run()
     {
+        //分离子线程和父线程
         spl_autoload_register(function ($name) {
             $class_path = str_replace('\\', DIRECTORY_SEPARATOR, $name);
             $class_file = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . "$class_path.php";

@@ -16,6 +16,7 @@ class CpuConnection
     public $conn = null;
     public $onMessage = null;
 
+    //解决黏包问题，没使用完的字符串保存在这里
     public $old_buffer = '';
 
     public function __construct($worker, $socket)
@@ -30,6 +31,7 @@ class CpuConnection
     // 动起来，跟着我的世界一起喝彩
     public function read()
     {
+        //尝试读取
         $buffer = @fread($this->conn, self::READ_BUFFER_SIZE);
         if ($buffer === '' || $buffer === false) {
             if (feof($this->conn) || !is_resource($this->conn) || $buffer === false) {
@@ -37,7 +39,7 @@ class CpuConnection
                 return;
             }
         }
-
+        //拼接上一次遗留的字符串
         $this->old_buffer = $this->old_buffer . $buffer;
         while(strlen($this->old_buffer)>2){
             $len = substr($this->old_buffer, 0, 2);
@@ -48,27 +50,17 @@ class CpuConnection
             $data = substr($this->old_buffer, 2, $body_len);
             $data = json_decode($data,true);
             $this->old_buffer = substr($this->old_buffer,($body_len+2),strlen($this->old_buffer)-($body_len+2));
-            $conn = null;
-            $conn = new Conn($data[1][0], $data[1][2], $data[1][3]);
 
             if (is_callable($this->worker->thread->eventHandler . '::' . $data[0])) {
                 $gen = $this->worker->thread->eventHandler . '::' . $data[0];
-                //模拟workerman的TcpConnection类
-                $response = yield from $gen ($conn, $data[1][1]);
-
-                //默认发送
-                if ($response != "") {
-                    //调用conn的发送
-                    $conn->send($response);
+                $response = yield from $gen ($data[2]);
+                //如果等于0不需要返回，否则相反
+                if($data[1]!=0){
+                    $this->worker->_event->add($this->conn, Select::EV_WRITE, array($this, '_write'), array(json_encode(array($data[1],$response))));
                 }
-                /** 在这里查看执行了什么操作，然后统一返回给workerman线程执行 */
-                $responseJobs = $conn->responseJobs;
-                $conn->responseJobs = array();
-                if (count($responseJobs) > 0) {
-                    //$this->_write($this->conn,json_encode($responseJobs));
-                    $this->worker->_event->add($this->conn, Select::EV_WRITE, array($this, '_write'), array(json_encode($responseJobs)));
-                }
-                unset($conn);
+            }else{
+                /** 如果没找到对应方法，那么也返回 */
+                var_dump("can't find ".$this->worker->thread->eventHandler . '::' . $data[0]);
             }
         }
         yield;
@@ -82,6 +74,7 @@ class CpuConnection
         }
         $this->worker->_event->del($this->conn,Select::EV_READ);
         $this->worker->_event->del($this->conn,Select::EV_WRITE);
+        $this->worker->thread->is_exit = false;
     }
 
     /**
@@ -100,7 +93,6 @@ class CpuConnection
         $body_len = strlen($data);
         $bin_head = pack('S*', $body_len);
         $len = @fwrite($socket, $bin_head . $data);
-
         if ($len === strlen($bin_head . $data)) {
             $this->worker->_event->del($socket, Select::EV_WRITE,$key);
         }else{

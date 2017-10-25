@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cbb49bb-e9e9-4883-b675-ace388c78109" name="默认" comment="">
+    <list default="true" id="8cbb49bb-e9e9-4883-b675-ace388c78109" name="默认" comment="任务线程工作文件">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cor/Net/Conn.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/CorThread.php" afterPath="$PROJECT_DIR$/Cor/CorThread.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/CorWorker.php" afterPath="$PROJECT_DIR$/Cor/CorWorker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/Net/Cpu.php" afterPath="$PROJECT_DIR$/Cor/Net/Cpu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/Net/CpuConnection.php" afterPath="$PROJECT_DIR$/Cor/Net/CpuConnection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/Net/Events/Select.php" afterPath="$PROJECT_DIR$/Cor/Net/Events/Select.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cor/Net/SystemCall.php" afterPath="$PROJECT_DIR$/Cor/Net/SystemCall.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Events.php" afterPath="$PROJECT_DIR$/Events.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Log/log.log" afterPath="$PROJECT_DIR$/Log/log.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Workerman/Events/Event.php" afterPath="$PROJECT_DIR$/Workerman/Events/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.php" afterPath="$PROJECT_DIR$/start.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,6 +31,22 @@
     <findStrings>
       <find>zyf</find>
       <find>stop</find>
+      <find>_onConnect</find>
+      <find>_onWorkerStart</find>
+      <find>_onMessage</find>
+      <find>_onClose</find>
+      <find>_onError</find>
+      <find>onBufferFull</find>
+      <find>onBufferDrain</find>
+      <find>cpu_unix_name</find>
+      <find>connections</find>
+      <find>connection</find>
+      <find>set_exception_handler</find>
+      <find>SIGUSR1</find>
+      <find>signalHandler</find>
+      <find>kill</find>
+      <find>loop</find>
+      <find>-&gt;loop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -27,11 +55,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Events.php" />
+        <option value="$PROJECT_DIR$/Cor/Net/SystemCall.php" />
+        <option value="$PROJECT_DIR$/Cor/Net/Cpu.php" />
+        <option value="$PROJECT_DIR$/Cor/CorThread.php" />
+        <option value="$PROJECT_DIR$/Workerman/Events/Libevent.php" />
+        <option value="$PROJECT_DIR$/Workerman/Events/Ev.php" />
+        <option value="$PROJECT_DIR$/Workerman/Events/Event.php" />
         <option value="$PROJECT_DIR$/Workerman/Worker.php" />
-        <option value="$PROJECT_DIR$/start.php" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Workerman/Events/Select.php" />
+        <option value="$PROJECT_DIR$/Cor/Net/CpuConnection.php" />
         <option value="$PROJECT_DIR$/Cor/CorWorker.php" />
+        <option value="$PROJECT_DIR$/Cor/Net/Events/Select.php" />
+        <option value="$PROJECT_DIR$/start.php" />
+        <option value="$PROJECT_DIR$/Events.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -43,9 +80,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="9" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="786" />
+    <option name="height" value="781" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -178,7 +216,7 @@
       <updated>1508809585147</updated>
       <workItem from="1508809590009" duration="3039000" />
       <workItem from="1508817295617" duration="1782000" />
-      <workItem from="1508823562896" duration="792000" />
+      <workItem from="1508823562896" duration="29643000" />
     </task>
     <task id="LOCAL-00001" summary="测试phpStorm git">
       <created>1508824639240</created>
@@ -187,31 +225,55 @@
       <option name="project" value="LOCAL" />
       <updated>1508824639241</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试phpStorm git">
+      <created>1508824662571</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1508824662571</updated>
+    </task>
+    <task id="LOCAL-00003" summary="任务线程工作文件">
+      <created>1508824824494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1508824824494</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5613000" />
+    <option name="totallyTimeSpent" value="34464000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="786" extended-state="6" />
+    <frame x="9" y="23" width="1440" height="781" extended-state="0" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25751072" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946298" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29898402" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3352685" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -223,87 +285,199 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试phpStorm git" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试phpStorm git" />
+    <MESSAGE value="任务线程工作文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="任务线程工作文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="22" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Log/stadout.log" />
-    <entry file="file://$PROJECT_DIR$/Cor/Extend/MySql.php">
+    <entry file="file://$PROJECT_DIR$/Workerman/Protocols/Http.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-582">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cor/Net/CpuConnection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1355">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="105">
-            <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-            <folding>
-              <marker date="1508817712000" expanded="true" signature="1202:1236" ph="{...}" />
-              <marker date="1508817712000" expanded="true" signature="1321:1390" ph="{...}" />
-              <marker date="1508817712000" expanded="true" signature="1470:1506" ph="{...}" />
-              <marker date="1508817712000" expanded="true" signature="2941:3106" ph="..." />
-              <marker date="1508817712000" expanded="true" signature="2961:3104" ph="..." />
-              <marker date="1508817712000" expanded="true" signature="3414:3483" ph="{...}" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cor/CorWorker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+        <state relative-caret-position="399">
+          <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cor/Net/Cpu.php">
+    <entry file="file://$PROJECT_DIR$/Cor/Net/Conn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="132" column="9" lean-forward="true" selection-start-line="127" selection-start-column="7" selection-end-line="132" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/Net/SystemCall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10638">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/pthreads/pthreads.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="389" column="20" lean-forward="false" selection-start-line="389" selection-start-column="20" selection-end-line="389" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_Users_zhaodanyang_Desktop_程序开发_github_space_workerman_cor_ape_start.php.pid">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workerman/Events/EventInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workerman/Events/Libevent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="200" column="5" lean-forward="true" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workerman/Events/Ev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="169" column="19" lean-forward="true" selection-start-line="169" selection-start-column="19" selection-end-line="169" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workerman/Events/Event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="185" column="5" lean-forward="true" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workerman/Events/Select.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="308" column="9" lean-forward="true" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Workerman/Worker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="189" column="24" lean-forward="false" selection-start-line="189" selection-start-column="11" selection-end-line="189" selection-end-column="24" />
+        <state relative-caret-position="1349">
+          <caret line="1887" column="0" lean-forward="true" selection-start-line="1887" selection-start-column="0" selection-end-line="1887" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/CorThread.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/Net/Events/Select.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="187" column="26" lean-forward="false" selection-start-line="187" selection-start-column="26" selection-end-line="187" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/CorWorker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="88" column="20" lean-forward="false" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/Net/CpuConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="58" column="149" lean-forward="true" selection-start-line="58" selection-start-column="102" selection-end-line="58" selection-end-column="149" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/Net/Cpu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="20" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cor/Extend/MySql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Events.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="294">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
-            <marker date="1508810782000" expanded="true" signature="279:300" ph="select * fro... t_admin" />
-            <marker date="1508810782000" expanded="true" signature="333:354" ph="select * fro... t_admin" />
-            <marker date="1508810782000" expanded="true" signature="387:408" ph="select * fro... t_admin" />
+            <marker date="1508945316000" expanded="true" signature="267:288" ph="select * fro... t_admin" />
+            <marker date="1508945316000" expanded="true" signature="321:343" ph="select * fro... t_admin" />
+            <marker date="1508945316000" expanded="true" signature="376:399" ph="select * fro... t_admin" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="84">
+            <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <folding>
+              <marker date="1508945316000" expanded="true" signature="2767:2932" ph="..." />
+              <marker date="1508945316000" expanded="true" signature="2787:2930" ph="..." />
+              <marker date="1508945316000" expanded="true" signature="3240:3309" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -9,17 +9,15 @@ $worker->count = 1;
 $worker->eventHandler = "Events";
 
 //以前怎么使用workerman，现在还可以怎么使用，毫无区别
-$worker->onMessage = function ($connection,$data){
+$worker->onMessage = function ($connection, $data) use ($worker) {
     //你也可以选择这样的方式，也就是workerman的方式,我们先注释掉，使用任务线程的send方法返回数据
     //$connection->send("hello workerman_cor_ape");
-    //这段代码会异步任务线程Evnets类里面的testMysql方法
-    CorWorker::add_job("testMysql",$connection,$data);
 
-};
+    //这段代码会异步任务线程Evnets类里面的helloworld方法
+    $worker->ajax("testMysql", $data, function ($body) use ($connection){
+        $connection->send(json_encode($body));
+    });
 
-//任务线程可以将结果主动通知给workerman线程
-$worker->jobReturn = function ($connection,$data){
-    var_dump($data);
 };
 
 // 日志

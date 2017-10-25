@@ -43,7 +43,9 @@ class Cpu
         // 初始化系统
         $this->init();
         $this->_event = new Select($this);
+        //添加端口socket监听
         $this->_event->add($this->_mainSocket, Select::EV_READ, array($this, '_accept'));
+        //将核心监听任务加入队列中
         $this->newTask($this->_event->loop());
     }
 

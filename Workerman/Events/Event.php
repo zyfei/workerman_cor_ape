@@ -182,9 +182,7 @@ class Event implements EventInterface
      */
     public function loop()
     {
-        var_dump("----------jin ru loop-----------");
         $this->_eventBase->loop();
-        var_dump("===============");
     }
 
     /**
