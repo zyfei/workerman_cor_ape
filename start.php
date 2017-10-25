@@ -13,7 +13,7 @@ $worker->onMessage = function ($connection, $data) use ($worker) {
     //你也可以选择这样的方式，也就是workerman的方式,我们先注释掉，使用任务线程的send方法返回数据
     //$connection->send("hello workerman_cor_ape");
 
-    //这段代码会异步任务线程Evnets类里面的helloworld方法
+    //这段代码会异步任务线程Evnets类里面的testMysql方法
     $worker->ajax("testMysql", $data, function ($body) use ($connection){
         $connection->send(json_encode($body));
     });
